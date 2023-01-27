@@ -13,4 +13,4 @@ And, with proper configuration, you can even receive notifications while you are
 
 Give it a try. It's Alfredo.
 
-With alfre 
+(More incoming)
