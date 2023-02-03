@@ -8,7 +8,7 @@ namespace Alfredo.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required] //attributo per indicare che i campi nel form html devono essere richiesti
         public string? Name { get; set; }
         public PizzaSize Size { get; set; }
         public bool IsGlutenFree { get; set; }

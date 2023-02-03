@@ -33,7 +33,7 @@
             <th scope="col">Delete</th>
         </tr>
     </thead>
-    @foreach (var pizza in Model.pizzas)
+    @foreach (var pizza in Model.Pizzas)
     {
         <tr>
             <td>@pizza.Name</td>
@@ -41,7 +41,7 @@
             <td>@pizza.Size</td>
             <td>@Model.GlutenFreeText(pizza)</td>
             <td>
-                <form method="post" asp-page-asp-page-handler="Delete" asp-route-id="@pizza.Id">
+                <form method="post" asp-page-handler="Delette" asp-route-id="@pizza.Id">
                     <button class="btn btn-danger">Delete</button>
                 </form>
             </td>

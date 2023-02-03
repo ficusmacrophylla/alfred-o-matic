@@ -5,6 +5,7 @@ namespace Alfredo.Services
 {
     public static class PizzaService
     {
+        //servizio che implementa la parte CRUD di gestione dei dati (Create, Read, Update, Delete)
         static List<Pizza> Pizzas { get; }
         static int nextId = 3;
         static PizzaService()
