@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
@@ -29,8 +30,9 @@ namespace Alfredo.Models
             SetMAC(mac);
             Status = IPStatus.Unknown;
 
-            string[] charArray = ip.Split();
-            Id = Int32.Parse(charArray.ToString());
+            string[] charArray = ip.Split('.');
+            string extIp = string.Join(null,charArray);
+            Id = Int32.Parse(extIp);
         }
 
         public void SetIP(string ip) => IP = IPAddress.Parse(ip);
@@ -49,6 +51,9 @@ namespace Alfredo.Models
             MAC = macDigits;
         }
 
-        
+        public string GetMAC()
+        {
+            return string.Join(':', MAC);
+        }
     }
 }

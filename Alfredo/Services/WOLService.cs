@@ -21,8 +21,8 @@ namespace Alfredo.Services
         {
 
 #if DEBUG
-            computers.Add(new Computer ("MOCK1", "192.168.1.1", "00-11-22-33-44-55"));
-            computers.Add(new Computer ("MOCK2", "192.168.1.2", "66-77-88-99-AA-BB"));
+            computers.Add(new Computer ("MOCK1", "192.169.2.1", "00-11-22-33-44-55"));
+            computers.Add(new Computer ("MOCK2", "192.169.2.214", "66-77-88-99-AA-BB"));
 #endif
         }
 
@@ -91,7 +91,7 @@ namespace Alfredo.Services
             else
                 computer.Status = reply.Status;
         }
-        public void UpdateStatusForAll(object sender, EventArgs e)
+        public void UpdateStatusForAll()
         {
             foreach (var computer in computers)
             {

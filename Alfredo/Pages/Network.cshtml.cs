@@ -27,7 +27,7 @@ namespace Alfredo.Pages
             if (!ModelState.IsValid)
                 return Page();
             service.Add(NewComputer);
-            return RedirectToAction("Get"); //aggiunge la pizza e riesegue il metodo onget
+            return RedirectToAction("Get"); 
         }
         public IActionResult OnPostDelete(int id)
         {
@@ -36,7 +36,18 @@ namespace Alfredo.Pages
         }
         public IActionResult OnPostCheckStatus(int id) 
         {
-            return null;
+            service.UpdateStatus(id);
+            return RedirectToAction("Get");
+        }
+        public IActionResult OnPostCheckStatusForAll(int id)
+        {
+            service.UpdateStatusForAll();
+            return RedirectToAction("Get");
+        }
+        public IActionResult OnPostWake(int id)
+        {
+            service.Wake(id);
+            return RedirectToAction("Get");
         }
 
     }

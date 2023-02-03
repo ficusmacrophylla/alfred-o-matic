@@ -14,15 +14,20 @@
         <label asp-for="NewComputer.Name">Name</label>
         @*il tag asp-for va a connettersi ad un oggetto del model, in particolare NewPizza*@
         <input type="text" asp-for="NewComputer.Name" class="mr-6" />
-        <label asp-for="NewComputer.IP">Size</label>
+        <label asp-for="NewComputer.IP">Ip Address</label>
         <input type="text" asp-for="NewComputer.IP" class="mr-6" />
-        <label asp-for="NewComputer.MAC">Size</label>
+        <label asp-for="NewComputer.MAC">Mac Address</label>
         <input type="text" asp-for="NewComputer.MAC" class="mr-6" />
         <button class="btn btn-primary">Add</button>
     </div>
 </form>
 
-
+<div class="refresh-btn align-content-md-center">
+    
+    <form method="post" asp-page-handler="CheckStatusForAll">
+        <button class="refresh-btn btn-primary">Check Status</button>
+    </form>
+</div>
 
 <table class="table mt-5">
     <thead>
@@ -33,6 +38,7 @@
             <th scope="col">MAC</th>
             <th scope="col">Status</th>
             <th scope="col">UpdateStatus</th>
+            <th scope="col">Wake</th>
             <th scope="col">Delete</th>
         </tr>
     </thead>
@@ -42,11 +48,16 @@
             <td>@dev.Id</td>
             <td>@dev.Name</td>
             <td>@dev.IP</td>
-            <td>@dev.MAC</td>
+            <td>@dev.GetMAC()</td>
             <td>@Model.ConnectionStatusText(dev)</td>           
             <td>
                 <form method="post" asp-page-handler="CheckStatus" asp-route-id="@dev.Id">
-                    <button class="btn btn-check">CheckStatus</button>
+                    <button class="btn btn-secondary">CheckStatus</button>
+                </form>
+            </td>
+            <td>
+                <form method="post" asp-page-handler="Wake" asp-route-id="@dev.Id">
+                    <button class="btn btn-secondary">Wake</button>
                 </form>
             </td>
             <td>
