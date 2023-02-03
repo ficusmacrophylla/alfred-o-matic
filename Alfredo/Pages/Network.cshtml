@@ -1,0 +1,64 @@
+﻿@page
+@using Alfredo.Models
+@model Alfredo.Pages.NetworkModel
+@{
+    ViewData["Title"] = "Devices List";
+}
+
+<h1>Devices List</h1>
+<form method="post" class="card p-3">
+    <div class="row">
+        <div asp-validation-summary="All"></div>
+    </div>
+    <div class="form-group mb-1 align-middle">
+        <label asp-for="NewComputer.Name">Name</label>
+        @*il tag asp-for va a connettersi ad un oggetto del model, in particolare NewPizza*@
+        <input type="text" asp-for="NewComputer.Name" class="mr-6" />
+        <label asp-for="NewComputer.IP">Size</label>
+        <input type="text" asp-for="NewComputer.IP" class="mr-6" />
+        <label asp-for="NewComputer.MAC">Size</label>
+        <input type="text" asp-for="NewComputer.MAC" class="mr-6" />
+        <button class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">IP</th>
+            <th scope="col">MAC</th>
+            <th scope="col">Status</th>
+            <th scope="col">UpdateStatus</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    @foreach (var dev in Model.Computers)
+    {
+        <tr>
+            <td>@dev.Id</td>
+            <td>@dev.Name</td>
+            <td>@dev.IP</td>
+            <td>@dev.MAC</td>
+            <td>@Model.ConnectionStatusText(dev)</td>           
+            <td>
+                <form method="post" asp-page-handler="CheckStatus" asp-route-id="@dev.Id">
+                    <button class="btn btn-check">CheckStatus</button>
+                </form>
+            </td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@dev.Id">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
