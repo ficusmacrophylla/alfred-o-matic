@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alfredo", "Alfredo\Alfredo.csproj", "{032319EB-A179-4D84-B4F4-7D75D5648BD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlfredoService", "AlfredoService\AlfredoService.csproj", "{915FD1F8-4A42-4CBB-BB74-28A08649E780}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{032319EB-A179-4D84-B4F4-7D75D5648BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{032319EB-A179-4D84-B4F4-7D75D5648BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{032319EB-A179-4D84-B4F4-7D75D5648BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915FD1F8-4A42-4CBB-BB74-28A08649E780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915FD1F8-4A42-4CBB-BB74-28A08649E780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915FD1F8-4A42-4CBB-BB74-28A08649E780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915FD1F8-4A42-4CBB-BB74-28A08649E780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
