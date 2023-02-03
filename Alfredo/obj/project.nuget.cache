@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "jLWv51npDdAyPZa5E5WxKqmHrhLywaVA0c8XazNVeYOeRxR8LjVit3AH2W5dQsF1GC9pZmvyO7WnS9QIaOcuEQ==",
+  "dgSpecHash": "j5IrsUO9sx8DTDEHp14cfhPW1yZwOanxiF1EbX4Uh8aCrONoJJWFXtr3NLKIBC3yMqjyvtYt/Uxi8bH45h8wPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matte\\source\\repos\\Alfredo\\Alfredo\\Alfredo.csproj",
+  "projectFilePath": "D:\\Cloud\\GitHub\\alfredo\\Alfredo\\Alfredo.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://tfs2013-opt:8080/tfs/DefaultOptima/_packaging/ONuGet/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
